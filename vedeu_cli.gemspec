@@ -32,5 +32,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard',               '0.8.7.6'
 
   spec.add_dependency 'thor', '0.19.1'
-  spec.add_dependency 'vedeu'
 end
