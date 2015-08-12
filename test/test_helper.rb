@@ -43,4 +43,4 @@ module MiniTest
 end # MiniTest
 
 require 'mocha/setup'
-require 'vedeu/cli'
+require 'vedeu_cli'
