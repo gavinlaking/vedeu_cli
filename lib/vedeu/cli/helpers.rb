@@ -53,7 +53,7 @@ module Vedeu
       # @param destination [String]
       # @return [void]
       def make_directory(destination)
-        Vedeu.log_stdout(type: :create, message: "#{destination}")
+        log_processed_file(destination)
 
         FileUtils.mkdir_p(destination)
       end
@@ -63,10 +63,10 @@ module Vedeu
       # @return [void]
       def copy_file(source, destination)
         if File.exist?(destination)
-          skipped_file(destination)
+          log_skipped_file(destination)
 
         else
-          Vedeu.log_stdout(type: :create, message: "#{destination}")
+          log_processed_file(destination)
 
           FileUtils.cp(source, destination)
         end
@@ -77,27 +77,36 @@ module Vedeu
       # @return [void]
       def make_file(source, destination)
         if File.exist?(destination)
-          skipped_file(destination)
+          log_skipped_file(destination)
 
         else
-          Vedeu.log_stdout(type: :create, message: "#{destination}")
+          log_processed_file(destination)
 
           File.write(destination, parse(source))
         end
       end
 
       # @param destination [String]
-      # @return [void]
-      def skipped_file(destination)
+      # @return [TrueClass]
+      def log_processed_file(destination)
+        Vedeu.log_stdout(type: :create, message: "#{destination}")
+
+        true
+      end
+
+      # @param destination [String]
+      # @return [TrueClass]
+      def log_skipped_file(destination)
         Vedeu.log_stdout(type:    :create,
                          message: "#{destination} " +
                                   Esc.red { 'already exists, skipped.' })
+        true
       end
 
       # @param destination [String]
       # @return [void]
       def touch_file(destination)
-        Vedeu.log_stdout(type: :create, message: "#{destination}")
+        log_processed_file(destination)
 
         FileUtils.touch(destination)
       end
