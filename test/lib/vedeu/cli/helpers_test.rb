@@ -95,13 +95,29 @@ module Vedeu
         end
       end
 
-      describe '#skipped_file' do
+      describe '#log_processed_file' do
         let(:destination) { 'some_file.txt' }
 
         before { Vedeu.stubs(:log_stdout) }
 
-        subject { instance.skipped_file(destination) }
+        subject { instance.log_processed_file(destination) }
 
+        it { subject.must_be_instance_of(TrueClass) }
+        it {
+          Vedeu.expects(:log_stdout).
+            with(type: :create, message: 'some_file.txt')
+          subject
+        }
+      end
+
+      describe '#log_skipped_file' do
+        let(:destination) { 'some_file.txt' }
+
+        before { Vedeu.stubs(:log_stdout) }
+
+        subject { instance.log_skipped_file(destination) }
+
+        it { subject.must_be_instance_of(TrueClass) }
         it {
           Vedeu.expects(:log_stdout).
             with(type:    :create,
@@ -129,7 +145,6 @@ module Vedeu
         subject { instance.name }
 
         it { subject.must_be_instance_of(String) }
-
         it { subject.must_equal('my_first_app') }
       end
 
