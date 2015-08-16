@@ -120,6 +120,7 @@ module Vedeu
           '/bin',
           '/config',
           '/lib',
+          '/log',
           '/test',
           '/vendor',
         ]
