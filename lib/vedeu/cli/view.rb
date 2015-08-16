@@ -36,9 +36,12 @@ module Vedeu
         make_template_file
         make_view_class_file
 
-        output("Please update the 'root' setting in 'config/configuration.rb'" \
-               " to '#{app_name}::#{name_as_class}Controller.new' to start " \
-               'Vedeu at this controller.')
+        output("Please update the 'root' setting in " \
+               "'config/configuration.rb' to start Vedeu using this " \
+               "controller and action: (args are optional)\n\n" \
+               "Vedeu.configure do\n" \
+               "  root :some_controller, :show, *args\n" \
+               "end\n\n")
       end
 
       private
