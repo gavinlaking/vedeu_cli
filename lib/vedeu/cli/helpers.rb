@@ -56,6 +56,8 @@ module Vedeu
         log_processed_file(destination)
 
         FileUtils.mkdir_p(destination)
+
+        true
       end
 
       # @param source [String]
@@ -65,10 +67,14 @@ module Vedeu
         if File.exist?(destination)
           log_skipped_file(destination)
 
+          false
+
         else
           log_processed_file(destination)
 
           FileUtils.cp(source, destination)
+
+          true
         end
       end
 
@@ -79,10 +85,14 @@ module Vedeu
         if File.exist?(destination)
           log_skipped_file(destination)
 
+          false
+
         else
           log_processed_file(destination)
 
           File.write(destination, parse(source))
+
+          true
         end
       end
 
@@ -109,6 +119,8 @@ module Vedeu
         log_processed_file(destination)
 
         FileUtils.touch(destination)
+
+        true
       end
 
       # @return [String]
