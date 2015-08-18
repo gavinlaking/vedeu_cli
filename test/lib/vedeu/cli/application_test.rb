@@ -19,6 +19,9 @@ module Vedeu
         # before do
         #   FileUtils.stubs(:cp_r)
         #   FileUtils.stubs(:mkdir)
+        #   FileUtils.stubs(:mkdir_p)
+        #   FileUtils.stubs(:touch)
+        #   File.stubs(:write)
         # end
 
         subject { instance.generate(_name) }
