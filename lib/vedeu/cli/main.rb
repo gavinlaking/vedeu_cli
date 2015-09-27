@@ -19,7 +19,7 @@ module Vedeu
       # @param name [String]
       # @return [String]
       def new(name)
-        say(Vedeu::CLI::Application.generate(name))
+        Vedeu::CLI::Application.generate(name)
       end
 
       # 'Specify the interface name lowercase snakecase; e.g. main_interface'
