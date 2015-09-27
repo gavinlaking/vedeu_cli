@@ -109,7 +109,9 @@ module Vedeu
       def log_skipped_file(destination)
         Vedeu.log_stdout(type:    :create,
                          message: "#{destination} " +
-                                  Esc.red { 'already exists, skipped.' })
+                                  Vedeu::EscapeSequences::Esc.red {
+                                    'already exists, skipped.'
+                                  })
         true
       end
 
