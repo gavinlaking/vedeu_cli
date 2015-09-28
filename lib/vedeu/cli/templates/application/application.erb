@@ -13,9 +13,9 @@ module <%= object.name_as_class %>
     #   <%= object.name_as_class %>::SomeController.new
     # end
 
-    # Vedeu::Bootstrap.start(ARGV, entry_point)
+    # Vedeu::Runtime::Bootstrap.start(ARGV, entry_point)
 
-    Vedeu::Bootstrap.start(ARGV)
+    Vedeu::Runtime::Bootstrap.start(ARGV)
 
   end
 
