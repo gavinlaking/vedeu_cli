@@ -12,42 +12,42 @@ module Vedeu
 
       # @return [String]
       def app_name
-        @app_name ||= File.read('./config/app_name')
+        @app_name ||= File.read('./config/app_name'.freeze)
       end
 
       # @return [String]
       def app_bin_path
-        name + '/bin/'
+        name + '/bin/'.freeze
       end
 
       # @return [String]
       def app_config_path
-        name + '/config/'
+        name + '/config/'.freeze
       end
 
       # @return [String]
       def app_controllers_path
-        name + '/app/controllers/'
+        name + '/app/controllers/'.freeze
       end
 
       # @return [String]
       def app_helpers_path
-        name + '/app/helpers/'
+        name + '/app/helpers/'.freeze
       end
 
       # @return [String]
       def app_models_path
-        name + '/app/models/'
+        name + '/app/models/'.freeze
       end
 
       # @return [String]
       def app_keymaps_path
-        name + '/app/models/keymaps/'
+        name + '/app/models/keymaps/'.freeze
       end
 
       # @return [String]
       def app_views_path
-        name + '/app/views/'
+        name + '/app/views/'.freeze
       end
 
       # @param destination [String]
@@ -99,7 +99,7 @@ module Vedeu
       # @param destination [String]
       # @return [TrueClass]
       def log_processed_file(destination)
-        Vedeu.log_stdout(type: :create, message: "#{destination}")
+        Vedeu.log_stdout(type: :create, message: "#{destination}".freeze)
 
         true
       end
@@ -151,7 +151,7 @@ module Vedeu
 
       # @return [String]
       def source
-        File.dirname(__FILE__) + '/templates/application/.'
+        File.dirname(__FILE__) + '/templates/application/.'.freeze
       end
 
     end # Helpers

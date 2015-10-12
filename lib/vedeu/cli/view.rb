@@ -41,44 +41,44 @@ module Vedeu
                "controller and action: (args are optional)\n\n" \
                "Vedeu.configure do\n" \
                "  root :some_controller, :show, *args\n" \
-               "end\n\n")
+               "end\n\n".freeze)
       end
 
       private
 
       # @return [void]
       def make_controller_file
-        make_file(source + '/app/controllers/name.erb',
-                  '.' + "/app/controllers/#{name}_controller.rb")
+        make_file(source + '/app/controllers/name.erb'.freeze,
+                  '.' + "/app/controllers/#{name}_controller.rb".freeze)
       end
 
       # @return [void]
       def make_helper_file
-        make_file(source + '/app/helpers/name.erb',
-                  '.' + "/app/helpers/#{name}_helper.rb")
+        make_file(source + '/app/helpers/name.erb'.freeze,
+                  '.' + "/app/helpers/#{name}_helper.rb".freeze)
       end
 
       # @return [void]
       def make_keymap_file
-        make_file(source + '/app/models/keymaps/name.erb',
-                  '.' + "/app/models/keymaps/#{name}.rb")
+        make_file(source + '/app/models/keymaps/name.erb'.freeze,
+                  '.' + "/app/models/keymaps/#{name}.rb".freeze)
       end
 
       # @return [void]
       def make_interface_file
-        make_file(source + '/app/views/interfaces/name.erb',
-                  '.' + "/app/views/interfaces/#{name}.rb")
+        make_file(source + '/app/views/interfaces/name.erb'.freeze,
+                  '.' + "/app/views/interfaces/#{name}.rb".freeze)
       end
 
       # @return [void]
       def make_template_file
-        touch_file('.' + "/app/views/templates/#{name}.erb")
+        touch_file('.' + "/app/views/templates/#{name}.erb".freeze)
       end
 
       # @return [void]
       def make_view_class_file
-        make_file(source + '/app/views/name.erb',
-                  '.' + "/app/views/#{name}.rb")
+        make_file(source + '/app/views/name.erb'.freeze,
+                  '.' + "/app/views/#{name}.rb".freeze)
       end
 
     end # View

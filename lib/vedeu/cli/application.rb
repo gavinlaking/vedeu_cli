@@ -52,14 +52,14 @@ module Vedeu
 
       # @return [void]
       def copy_application_bootstrapper
-        make_file(source + '/application.erb',
-                  app_root_path + '/application.rb')
+        make_file(source + '/application.erb'.freeze,
+                  app_root_path + '/application.rb'.freeze)
       end
 
       # @return [void]
       def copy_application_controller
-        make_file(source + '/app/controllers/application_controller.erb',
-                  app_controllers_path + 'application_controller.rb')
+        make_file(source + '/app/controllers/application_controller.erb'.freeze,
+                  app_controllers_path + 'application_controller.rb'.freeze)
       end
 
       # @return [void]
@@ -69,30 +69,30 @@ module Vedeu
 
       # @return [void]
       def copy_application_helper
-        make_file(source + '/app/helpers/application_helper.erb',
-                  app_helpers_path + 'application_helper.rb')
+        make_file(source + '/app/helpers/application_helper.erb'.freeze,
+                  app_helpers_path + 'application_helper.rb'.freeze)
       end
 
       # @return [void]
       def copy_configuration
-        make_file(source + '/config/configuration.erb',
-                  app_config_path + 'configuration.rb')
+        make_file(source + '/config/configuration.erb'.freeze,
+                  app_config_path + 'configuration.rb'.freeze)
       end
 
       # @return [void]
       def copy_app_name
-        make_file(source + '/config/app_name.erb',
-                  app_config_path + 'app_name')
+        make_file(source + '/config/app_name.erb'.freeze,
+                  app_config_path + 'app_name'.freeze)
       end
 
       # @return [void]
       def copy_app_root_files
         [
-          '/Gemfile',
-          '/.gitignore',
-          '/LICENSE.txt',
-          '/README.md',
-          '/.ruby-version',
+          '/Gemfile'.freeze,
+          '/.gitignore'.freeze,
+          '/LICENSE.txt'.freeze,
+          '/README.md'.freeze,
+          '/.ruby-version'.freeze,
         ].each do |file|
           copy_file((source + file), (app_root_path + file))
         end
@@ -100,29 +100,29 @@ module Vedeu
 
       # @return [void]
       def make_application_executable
-        FileUtils.chmod(0755, "#{name}/bin/#{name}")
+        FileUtils.chmod(0755, "#{name}/bin/#{name}".freeze)
       end
 
       # @return [void]
       def copy_global_keymap
-        copy_file(source + '/app/models/keymaps/_global_.rb',
-                  app_keymaps_path + '_global_.rb')
+        copy_file(source + '/app/models/keymaps/_global_.rb'.freeze,
+                  app_keymaps_path + '_global_.rb'.freeze)
       end
 
       # @return [Array<String>]
       def directories
         [
-          '/app/controllers',
-          '/app/helpers',
-          '/app/models/keymaps',
-          '/app/views/interfaces',
-          '/app/views/templates',
-          '/bin',
-          '/config',
-          '/lib',
-          '/log',
-          '/test',
-          '/vendor',
+          '/app/controllers'.freeze,
+          '/app/helpers'.freeze,
+          '/app/models/keymaps'.freeze,
+          '/app/views/interfaces'.freeze,
+          '/app/views/templates'.freeze,
+          '/bin'.freeze,
+          '/config'.freeze,
+          '/lib'.freeze,
+          '/log'.freeze,
+          '/test'.freeze,
+          '/vendor'.freeze,
         ]
       end
 
