@@ -116,6 +116,8 @@ module Vedeu
           '/app/helpers'.freeze,
           '/app/models/keymaps'.freeze,
           '/app/views/interfaces'.freeze,
+          '/app/views/interfaces/borders'.freeze,
+          '/app/views/interfaces/geometries'.freeze,
           '/app/views/templates'.freeze,
           '/bin'.freeze,
           '/config'.freeze,

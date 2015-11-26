@@ -41,6 +41,16 @@ module Vedeu
       end
 
       # @return [String]
+      def app_borders_path
+        name + '/app/views/interfaces/borders/'.freeze
+      end
+
+      # @return [String]
+      def app_geometries_path
+        name + '/app/views/interfaces/geometries/'.freeze
+      end
+
+      # @return [String]
       def app_keymaps_path
         name + '/app/models/keymaps/'.freeze
       end

@@ -1,0 +1,32 @@
+# Defines the geometry for the interface/view with the same name.
+#
+Vedeu.geometry '<%= object.name %>' do
+  # Uncomment this and provide a height and width to centrally align
+  # the interface in the terminal.
+  #
+  # centred!
+
+  # Uncomment this to use all available space in the terminal.
+  #
+  # maximised!
+
+  # Set the height and width of the interface.
+  # - If 'centred!' is set, then the y, x coordinates will be
+  #   calculated automatically.
+  # - If 'centred! is not set, then the y, x coordinates will be 1, 1.
+  # - If 'x' and/or 'y' coordinate(s) are set, then they will be the
+  #   starting coordinates.
+  # - If 'xn' and/or 'yn' coordinate(s) are set, then either/both
+  #   height and width will be ignored.
+  #
+  # height 10
+  # width  10
+
+  # Set the width via the x (start), or xn (end) coordinates.
+  # x      1
+  # xn     11
+
+  # Set the height via the y (start), or yn (end) coordinates.
+  # y      1
+  # yn     11
+end

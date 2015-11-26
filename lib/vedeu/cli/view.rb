@@ -32,6 +32,8 @@ module Vedeu
         make_controller_file
         make_helper_file
         make_keymap_file
+        make_border_file
+        make_geometry_file
         make_interface_file
         make_template_file
         make_view_class_file
@@ -62,6 +64,18 @@ module Vedeu
       def make_keymap_file
         make_file(source + '/app/models/keymaps/name.erb'.freeze,
                   '.' + "/app/models/keymaps/#{name}.rb".freeze)
+      end
+
+      # @return [void]
+      def make_border_file
+        make_file(source + '/app/views/interfaces/borders/name.erb'.freeze,
+                  '.' + "/app/views/interfaces/borders/#{name}.rb".freeze)
+      end
+
+      # @return [void]
+      def make_geometry_file
+        make_file(source + '/app/views/interfaces/geometries/name.erb'.freeze,
+                  '.' + "/app/views/interfaces/geometries/#{name}.rb".freeze)
       end
 
       # @return [void]

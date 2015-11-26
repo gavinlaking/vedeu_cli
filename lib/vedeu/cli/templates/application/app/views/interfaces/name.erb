@@ -1,67 +1,48 @@
+# Defines an interface.
+#
 Vedeu.interface '<%= object.name %>' do
-  # border do
-    # Define colour and style of border
-    # colour foreground: '#ffffff', background: '#000000'
-    # style  'normal'
+  # Define the colour of the interface:
+  #
+  # background '#000000'
+  # foreground '#ffffff'
 
-    # Define visibility of border
-    #
-    # Uncomment one of these:
-    # enable!
-    # disable!
-    #
-    # Individually control each border:
-    # hide_bottom!
-    # hide_left!
-    # hide_right!
-    # hide_top!
-    # show_bottom!
-    # show_left!
-    # show_right!
-    # show_top!
+  # Define the colour of the interface concisely:
+  #
+  # colour background: '#000000', foreground: '#ffffff'
 
-    # Define characters used to draw border
-    # bottom_right '+'
-    # bottom_left  '+'
-    # horizontal   '-'
-    # top_right    '+'
-    # top_left     '+'
-    # vertical     '|'
-
-    # Define the title of the interface
-    # title '<%= object.name %>'
-  # end
-
-  # background
-
-  # colour
-
-  # cursor!
+  # Define whether the interface should have a cursor (can be
+  # overridden by the view):
+  #
+  # cursor!    # => same as `cursor(true)`
+  # no_cursor! # => same as `cursor(false)`
 
   # See Vedeu::DSL::Interface#delay
   # delay 1.0
 
+  # Uncomment to indicate this interface as having focus at startup.
+  # Note: If multiple interfaces are set to have focus on startup,
+  #       the last defined will have focus.
+  #
   # focus!
 
-  # foreground
-
-  # geometry do
-    # centred!
-    # x      1
-    # y      1
-    # xn     11
-    # yn     11
-    # height 10
-    # width  10
-  # end
-
+  # Define the group the interface belongs to. Allowing multiple
+  # interfaces to be manipulated at once.
+  #
   # group ''
 
+  # Define visibility of the interface.
+  #
   # hide!
-
   # show!
 
-  # style
+  # Define the default style for the interface, this affects all
+  # characters in the interface unless overridden on a per-line,
+  # per-stream or per-character basis.
+  #
+  # style :normal
 
-  # zindex
+  # Interfaces with a higher zindex will be display on top of
+  # interfaces with a lower zindex.
+  #
+  # zindex 1
 end
