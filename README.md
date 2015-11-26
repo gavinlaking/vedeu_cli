@@ -10,6 +10,21 @@ Vedeu (vee-dee-you; aka VDU) is my attempt at creating a terminal based
  for Vedeu.
 
 
+## Requirements
+
+Patience.
+
+
+## Installation
+
+To install Vedeu, simply:
+
+    gem install vedeu
+
+To use Vedeu's application scaffolding, see the
+[RubyDoc](http://www.rubydoc.info/gems/vedeu/file/docs/getting_started.md)
+
+
 ## Example
 
 Coming soon!
@@ -17,7 +32,23 @@ Coming soon!
 
 ## Documentation & Usage
 
-Coming soon!
+More coming soon! In the meantime...
+
+To create a new application framework use:
+
+    vedeu new your_app_name_here
+
+
+To create a new view with supporting files within your newly created
+ application, after moving into your application directory, use:
+
+    mv your_app_name_here
+    vedeu view your_view_name_here
+
+
+To find out what version of Vedeu::CLI (and Vedeu) you are using, use:
+
+    vedeu version
 
 
 ## Development / Contributing
@@ -39,6 +70,7 @@ Any branch on the repository that is not `master` is probably experimental; do
  not rely on anything in these branches. Typically, `twerks` will be merged
  into `master` before a release, and branches prefixed with `spike/` are me
  playing with ideas.
+
 
 ### General contribution help
 
