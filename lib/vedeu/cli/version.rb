@@ -5,7 +5,7 @@ module Vedeu
   module CLI
 
     # The current version of Vedeu CLI.
-    VERSION = '0.0.9'.freeze
+    VERSION = '0.0.10'.freeze
 
   end # CLI
 
