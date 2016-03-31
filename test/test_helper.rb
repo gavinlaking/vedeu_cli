@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 require 'simplecov-console' if ENV['CONSOLE_COVERAGE']
 require 'pry'

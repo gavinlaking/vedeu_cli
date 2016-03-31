@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vedeu
 
   module CLI
@@ -12,52 +14,52 @@ module Vedeu
 
       # @return [String]
       def app_name
-        @app_name ||= File.read('./config/app_name'.freeze)
+        @app_name ||= File.read('./config/app_name' )
       end
 
       # @return [String]
       def app_bin_path
-        name + '/bin/'.freeze
+        name + '/bin/'
       end
 
       # @return [String]
       def app_config_path
-        name + '/config/'.freeze
+        name + '/config/'
       end
 
       # @return [String]
       def app_controllers_path
-        name + '/app/controllers/'.freeze
+        name + '/app/controllers/'
       end
 
       # @return [String]
       def app_helpers_path
-        name + '/app/helpers/'.freeze
+        name + '/app/helpers/'
       end
 
       # @return [String]
       def app_models_path
-        name + '/app/models/'.freeze
+        name + '/app/models/'
       end
 
       # @return [String]
       def app_borders_path
-        name + '/app/views/interfaces/borders/'.freeze
+        name + '/app/views/interfaces/borders/'
       end
 
       # @return [String]
       def app_geometries_path
-        name + '/app/views/interfaces/geometries/'.freeze
+        name + '/app/views/interfaces/geometries/'
       end
 
       # @return [String]
       def app_keymaps_path
-        name + '/app/models/keymaps/'.freeze
+        name + '/app/models/keymaps/'
       end
 
       # @return [String]
       def app_views_path
-        name + '/app/views/'.freeze
+        name + '/app/views/'
       end
 
       # @param destination [String]
@@ -88,49 +90,49 @@ module Vedeu
         end
       end
 
-      # @param source [String]
-      # @param destination [String]
+      # @param source_path [String]
+      # @param destination_path [String]
       # @return [void]
-      def make_file(source, destination)
-        if File.exist?(destination)
-          log_skipped_file(destination)
+      def make_file(source_path, destination_path)
+        if File.exist?(destination_path)
+          log_skipped_file(destination_path)
 
           false
 
         else
-          log_processed_file(destination)
+          log_processed_file(destination_path)
 
-          File.write(destination, parse(source))
+          File.write(destination_path, parse(source_path))
 
           true
         end
       end
 
-      # @param destination [String]
+      # @param destination_path [String]
       # @return [TrueClass]
-      def log_processed_file(destination)
-        Vedeu.log_stdout(type: :create, message: "#{destination}".freeze)
+      def log_processed_file(destination_path)
+        Vedeu.log_stdout(type: :create, message: "#{destination_path}")
 
         true
       end
 
-      # @param destination [String]
+      # @param destination_path [String]
       # @return [TrueClass]
-      def log_skipped_file(destination)
+      def log_skipped_file(destination_path)
         Vedeu.log_stdout(type:    :create,
-                         message: "#{destination} " +
+                         message: "#{destination_path} " +
                                   Vedeu::EscapeSequences::Esc.red {
                                     'already exists, skipped.'
                                   })
         true
       end
 
-      # @param destination [String]
+      # @param destination_path [String]
       # @return [void]
-      def touch_file(destination)
-        log_processed_file(destination)
+      def touch_file(destination_path)
+        log_processed_file(destination_path)
 
-        FileUtils.touch(destination)
+        FileUtils.touch(destination_path)
 
         true
       end
@@ -155,13 +157,13 @@ module Vedeu
 
       # @param source [String]
       # @return [String]
-      def parse(source)
-        Vedeu::Templating::Template.parse(self, source)
+      def parse(source_path)
+        Vedeu::Templating::Template.parse(self, source_path)
       end
 
       # @return [String]
       def source
-        File.dirname(__FILE__) + '/templates/application/.'.freeze
+        File.dirname(__FILE__) + '/templates/application/.'
       end
 
     end # Helpers

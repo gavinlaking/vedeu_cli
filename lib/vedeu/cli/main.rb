@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vedeu
 
   # Provide a command line interface to Vedeu.
