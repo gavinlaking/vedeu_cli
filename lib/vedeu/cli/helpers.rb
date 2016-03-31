@@ -14,7 +14,7 @@ module Vedeu
 
       # @return [String]
       def app_name
-        @app_name ||= File.read('./config/app_name' )
+        @app_name ||= File.read('./config/app_name')
       end
 
       # @return [String]
@@ -111,7 +111,7 @@ module Vedeu
       # @param destination_path [String]
       # @return [TrueClass]
       def log_processed_file(destination_path)
-        Vedeu.log_stdout(type: :create, message: "#{destination_path}")
+        Vedeu.log_stdout(type: :create, message: destination_path)
 
         true
       end
@@ -141,7 +141,7 @@ module Vedeu
       def name
         @_name ||= @name.downcase
       end
-      alias_method :app_root_path, :name
+      alias app_root_path name
 
       # @return [String]
       def name_as_class

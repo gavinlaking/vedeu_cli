@@ -66,7 +66,7 @@ module Vedeu
 
       # @return [void]
       def copy_application_executable
-        copy_file(source + '/bin/name', app_bin_path + "#{name}")
+        copy_file(source + '/bin/name', app_bin_path + name)
       end
 
       # @return [void]
