@@ -530,7 +530,7 @@ Style/SingleLineMethods:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-single-line-methods'
   Enabled: true
 
-Style/SingleSpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Description: >-
                  Checks that exactly one space is used between a method name
                  and the first argument for method calls without parentheses.
@@ -546,7 +546,7 @@ Style/SpaceAfterComma:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#spaces-operators'
   Enabled: true
 
-Style/SpaceAfterControlKeyword:
+Style/SpaceAroundKeyword:
   Description: 'Use spaces after if/elsif/unless/while/until/case/when.'
   Enabled: true
 
@@ -611,7 +611,7 @@ Style/SpaceAroundOperators:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#spaces-operators'
   Enabled: true
 
-Style/SpaceBeforeModifierKeyword:
+Style/SpaceAroundKeyword:
   Description: 'Put a space before the modifier keyword.'
   Enabled: true
 
@@ -674,7 +674,7 @@ Style/TrailingBlankLines:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#newline-eof'
   Enabled: true
 
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
   Description: 'Checks for trailing comma in parameter lists and literals.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   Enabled: true
@@ -914,7 +914,7 @@ Lint/ShadowingOuterLocalVariable:
                  for block arguments or block local variables.
   Enabled: true
 
-Lint/SpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Description: >-
                  Put a space between a method name and the first argument
                  in a method call without parentheses.
@@ -1002,10 +1002,6 @@ Rails/Date:
   Description: >-
                   Checks the correct usage of date aware methods,
                   such as Date.today, Date.current etc.
-  Enabled: true
-
-Rails/DefaultScope:
-  Description: 'Checks if the argument passed to default_scope is a block.'
   Enabled: true
 
 Rails/Delegate:
