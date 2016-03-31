@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vedeu
 
   module CLI
@@ -32,6 +34,8 @@ module Vedeu
         make_controller_file
         make_helper_file
         make_keymap_file
+        make_border_file
+        make_geometry_file
         make_interface_file
         make_template_file
         make_view_class_file
@@ -41,44 +45,56 @@ module Vedeu
                "controller and action: (args are optional)\n\n" \
                "Vedeu.configure do\n" \
                "  root :some_controller, :show, *args\n" \
-               "end\n\n".freeze)
+               "end\n\n")
       end
 
       private
 
       # @return [void]
       def make_controller_file
-        make_file(source + '/app/controllers/name.erb'.freeze,
-                  '.' + "/app/controllers/#{name}_controller.rb".freeze)
+        make_file(source + '/app/controllers/name.erb',
+                  "./app/controllers/#{name}_controller.rb")
       end
 
       # @return [void]
       def make_helper_file
-        make_file(source + '/app/helpers/name.erb'.freeze,
-                  '.' + "/app/helpers/#{name}_helper.rb".freeze)
+        make_file(source + '/app/helpers/name.erb',
+                  "./app/helpers/#{name}_helper.rb")
       end
 
       # @return [void]
       def make_keymap_file
-        make_file(source + '/app/models/keymaps/name.erb'.freeze,
-                  '.' + "/app/models/keymaps/#{name}.rb".freeze)
+        make_file(source + '/app/models/keymaps/name.erb',
+                  "./app/models/keymaps/#{name}.rb")
+      end
+
+      # @return [void]
+      def make_border_file
+        make_file(source + '/app/views/interfaces/borders/name.erb',
+                  "./app/views/interfaces/borders/#{name}.rb")
+      end
+
+      # @return [void]
+      def make_geometry_file
+        make_file(source + '/app/views/interfaces/geometries/name.erb',
+                  "./app/views/interfaces/geometries/#{name}.rb")
       end
 
       # @return [void]
       def make_interface_file
-        make_file(source + '/app/views/interfaces/name.erb'.freeze,
-                  '.' + "/app/views/interfaces/#{name}.rb".freeze)
+        make_file(source + '/app/views/interfaces/name.erb',
+                  "./app/views/interfaces/#{name}.rb")
       end
 
       # @return [void]
       def make_template_file
-        touch_file('.' + "/app/views/templates/#{name}.erb".freeze)
+        touch_file("./app/views/templates/#{name}.erb")
       end
 
       # @return [void]
       def make_view_class_file
-        make_file(source + '/app/views/name.erb'.freeze,
-                  '.' + "/app/views/#{name}.rb".freeze)
+        make_file(source + '/app/views/name.erb',
+                  "./app/views/#{name}.rb")
       end
 
     end # View
