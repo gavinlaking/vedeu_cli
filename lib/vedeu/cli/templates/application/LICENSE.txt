@@ -1,6 +1,9 @@
 Copyright (c) 2014 Your Name Here
+Copyright (c) 2014 Gavin Laking (Vedeu)
 
-Note: You may wish to change this license to suit your legal needs.
+Note: You may wish to change this license to suit your legal needs,
+but please leave the copyright notice of Vedeu in place or add it to
+your new `LICENSE.txt` file.
 
 MIT License
 
